@@ -1,5 +1,8 @@
 ---
+layout: post
 title: example
-date: 2023-07-06 11:46:40
 tags:
 ---
+Welcome to Josephine's blog.
+
+This is my first page.

@@ -103,5 +103,6 @@ theme: landscape
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://josephine-young.github.io
-  
+  repo: https://github.com/josephine-young/josephine-young.github.io
+  branch: gh-pages
+
