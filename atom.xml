@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://josephine-young.github.io/</id>
+    <title>Josephine&apos;s Blog</title>
+    <updated>2024-04-18T23:01:52.942Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://josephine-young.github.io/"/>
+    <link rel="self" href="https://josephine-young.github.io/atom.xml"/>
+    <subtitle>Reading notes &amp; blogs on NLP/Bioinformatics topics. </subtitle>
+    <logo>https://josephine-young.github.io/images/avatar.png</logo>
+    <icon>https://josephine-young.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2024, Josephine&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Transformers and Pretrained Language Models]]></title>
+        <id>https://josephine-young.github.io/post/speech-and-language-processing-chapter-10-note/</id>
+        <link href="https://josephine-young.github.io/post/speech-and-language-processing-chapter-10-note/">
+        </link>
+        <updated>2022-11-03T06:45:54.000Z</updated>
+        <summary type="html"><![CDATA[<p>Dive into the attention mechanism and transformer blocks of Transformer.</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Dive into the attention mechanism and transformer blocks of Transformer.</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[RNNs and LSTMs]]></title>
+        <id>https://josephine-young.github.io/post/speech-and-language-processing-chapter-9-note/</id>
+        <link href="https://josephine-young.github.io/post/speech-and-language-processing-chapter-9-note/">
+        </link>
+        <updated>2022-11-02T05:21:49.000Z</updated>
+        <summary type="html"><![CDATA[<p>Following the introduction of neural networks in Chapter 7, this chapter explains one of the most important paradigms of LLM——autoregressive encoder-decoder, in solid examples of RNN and LSTM.</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Following the introduction of neural networks in Chapter 7, this chapter explains one of the most important paradigms of LLM——autoregressive encoder-decoder, in solid examples of RNN and LSTM.</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Logistic Regression]]></title>
+        <id>https://josephine-young.github.io/post/speech-and-language-processing-chapter-5-note/</id>
+        <link href="https://josephine-young.github.io/post/speech-and-language-processing-chapter-5-note/">
+        </link>
+        <updated>2022-11-01T11:58:16.000Z</updated>
+        <summary type="html"><![CDATA[<p>Some add-ups about logistic regression, the fundamental part of neural networks.</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Some add-ups about logistic regression, the fundamental part of neural networks.</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Sequence Labeling for Parts of Speech and Named Entities]]></title>
+        <id>https://josephine-young.github.io/post/speech-and-language-processing-chapter-8-note/</id>
+        <link href="https://josephine-young.github.io/post/speech-and-language-processing-chapter-8-note/">
+        </link>
+        <updated>2022-11-01T04:50:47.000Z</updated>
+        <summary type="html"><![CDATA[<p>The task definition and modelling of POS tagging, as well as how we solve it through HMM and CRF.</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>The task definition and modelling of POS tagging, as well as how we solve it through HMM and CRF.</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Vector Semantics and Embeddings]]></title>
+        <id>https://josephine-young.github.io/post/speech-and-language-processing-chapter-6-note/</id>
+        <link href="https://josephine-young.github.io/post/speech-and-language-processing-chapter-6-note/">
+        </link>
+        <updated>2022-11-01T04:37:51.000Z</updated>
+        <summary type="html"><![CDATA[<p>The underlying assumptions and hypothesis about embeddings, and the fruits of out vector-embedding transition——Word2Vec.</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>The underlying assumptions and hypothesis about embeddings, and the fruits of out vector-embedding transition——Word2Vec.</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Naive Bayes and Sentiment Classification]]></title>
+        <id>https://josephine-young.github.io/post/speech-and-language-processing-chapter-4-note/</id>
+        <link href="https://josephine-young.github.io/post/speech-and-language-processing-chapter-4-note/">
+        </link>
+        <updated>2022-10-31T11:45:43.000Z</updated>
+        <summary type="html"><![CDATA[<p>Building generative NLP classifiers based on Bayesian assumtions and rules.</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Building generative NLP classifiers based on Bayesian assumtions and rules.</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[N-gram Language Models]]></title>
+        <id>https://josephine-young.github.io/post/speech-and-language-processing-chapter3-note/</id>
+        <link href="https://josephine-young.github.io/post/speech-and-language-processing-chapter3-note/">
+        </link>
+        <updated>2022-10-31T08:24:57.000Z</updated>
+        <summary type="html"><![CDATA[<p>Intuition and assumption of N-gram; Maximum likelihood extimation(MLE); Smoothing tricks; Perplexity, entropy and the evaluation of language models;</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Intuition and assumption of N-gram; Maximum likelihood extimation(MLE); Smoothing tricks; Perplexity, entropy and the evaluation of language models;</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Text Normalization]]></title>
+        <id>https://josephine-young.github.io/post/chapter-2-note/</id>
+        <link href="https://josephine-young.github.io/post/chapter-2-note/">
+        </link>
+        <updated>2022-10-27T08:27:44.000Z</updated>
+        <summary type="html"><![CDATA[<p>Text normalization at different levels, including tokenization, sentence segmentation and (sentence) edit distance.</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Text normalization at different levels, including tokenization, sentence segmentation and (sentence) edit distance.</p>
+]]></content>
+    </entry>
+</feed>

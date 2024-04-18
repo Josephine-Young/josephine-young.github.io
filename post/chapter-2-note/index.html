@@ -1,0 +1,240 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Text Normalization | Josephine&#39;s Blog</title>
+<link rel="shortcut icon" href="https://josephine-young.github.io//favicon.ico?v=1713481305089">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://josephine-young.github.io//styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Text Normalization | Josephine&#39;s Blog - Atom Feed" href="https://josephine-young.github.io//atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="Text normalization at different levels, including tokenization, sentence segmentation and (sentence) edit distance.
+
+Spe..." />
+    <meta name="keywords" content="NLP,Reading Note,Speech and Language Processing" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://josephine-young.github.io/">
+  <img class="avatar" src="https://josephine-young.github.io//images/avatar.png?v=1713481305089" alt="">
+  </a>
+  <h1 class="site-title">
+    Josephine&#39;s Blog
+  </h1>
+  <p class="site-description">
+    Reading notes & blogs on NLP/Bioinformatics topics. 
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          Home
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          Archives
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          Tags
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          About
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/Josephine-Young" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="yvxiaozhu@gmail.com" target="_blank">
+          <i class="ri-email-line"></i>
+        </a>
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Text Normalization
+            </h2>
+            <div class="post-info">
+              <span>
+                2022-10-27
+              </span>
+              <span>
+                3 min read
+              </span>
+              
+                <a href="https://josephine-young.github.io/tag/-PwnSSygV/" class="post-tag">
+                  # NLP
+                </a>
+              
+                <a href="https://josephine-young.github.io/tag/tvOm7_3vN/" class="post-tag">
+                  # Reading Note
+                </a>
+              
+                <a href="https://josephine-young.github.io/tag/-oBYTutxn/" class="post-tag">
+                  # Speech and Language Processing
+                </a>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <p>Text normalization at different levels, including tokenization, sentence segmentation and (sentence) edit distance.</p>
+<!-- more -->
+<p>Speech and Language Processing - Chapter 2 Note</p>
+<h2 id="1-tokenization">1. tokenization</h2>
+<ul>
+<li>distinguish between lemmas, word types and tokens.<br>
+Heap's law/Herdan's Law shows the relationship between # of types <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>V</mi><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">|V|</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="mord">∣</span></span></span></span> and # of tokens <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span></span></span></span>:</li>
+</ul>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>V</mi><mi mathvariant="normal">∣</mi><mo>=</mo><mi>k</mi><msup><mi>N</mi><mi>β</mi></msup><mo separator="true">,</mo><mn>0</mn><mo>&lt;</mo><mi>β</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">  |V|=kN^\beta, 0&lt;\beta&lt;1
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="mord">∣</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.093548em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8991079999999999em;"><span style="top:-3.1130000000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05278em;">β</span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05278em;">β</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></span></p>
+<ul>
+<li>Word segmentation is required for Japanese or Chinese, when word rather than character boundraies are required.</li>
+<li>Tokenization isn't just about identify alphabetical words. All kinds of numbers, punctuations, special characters as well as clitic contractions, multiword expressions complicate the process of tokenization.</li>
+<li>Add subwords or <em>morphemes</em> into the tokenizer's vocabulary to deal with unseen words.</li>
+<li><strong>Penn Treebank Tokenization</strong> standard</li>
+<li>Standard method: use deterministic algos based on RE compiled into efficient finite state automata, making it very fast.</li>
+</ul>
+<h3 id="methods">Methods:</h3>
+<ul>
+<li>2 parts: a token learner that learns a vocabulary from the training corpus and a token segmenter that processes the test set.</li>
+<li>3 algos are widely used:<strong>byte-pair encoding</strong>, <strong>unigram language modeling</strong>, <strong>WordPiece</strong></li>
+</ul>
+<h3 id="byte-pair-encoding-bpe-for-tokenization">Byte-Pair Encoding (BPE) for Tokenization</h3>
+<p>A third option instead of tokens as words or as characters; let data tell us what the tokens should be.<br>
+Begin with a vocabulary with only individual characters and gradually merge.<br>
+<img src="https://josephine-young.github.io//post-images/1697444957254.png" alt="vocabulary" loading="lazy"><br>
+Then token segmenter will use the resulted vocabulary on the test corpus.<br>
+<img src="https://josephine-young.github.io//post-images/1697445083384.png" alt="BPE algo" loading="lazy"></p>
+<h2 id="2-word-normalization-and-lemmatization">2. word normalization and lemmatization</h2>
+<ul>
+<li>word nomalization: Putting words/tokens in a standard format, chossing a single normal form for words with multiple forms (like US and USA); important for information retrieval;</li>
+<li>lemmatization: determining that two different words have the same root, thus the same meaning. -&gt; morphological parsing</li>
+<li>stemming: the naive version of lemmatization: chopping off word final affixes, e.g. the Porter Stemmer.</li>
+</ul>
+<h2 id="3-sentence-segmentation">3. sentence segmentation</h2>
+<p>Sentence segmentation may be jointly addressed with word tokenization, since it mainly identifies the use of punctuations, which is already discussed.</p>
+<h2 id="4-minimum-edit-distance">4. minimum edit distance</h2>
+<ul>
+<li>In other words, find alignment.</li>
+<li>application: auto correction, coreference, minimum cost alignment</li>
+<li><strong>Levenshtein distance</strong>: Also give different weights between deletion/insertion and substitution; (like the methods in DNA/proteins seqs)</li>
+<li>Algo that calculates the minimum edit distance between 2 strings: dynamic programming; Viterbi algo computes the &quot;maximum probability alignment&quot; of 2 strings instead of the deterministic minimum edit distance.</li>
+</ul>
+<p>Thanks to the authors Dan Jurafsky and James H. Martin, e-book is always available at <a href="https://web.stanford.edu/~jurafsky/slp3/">Stanford website</a></p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#1-tokenization">1. tokenization</a>
+<ul>
+<li><a href="#methods">Methods:</a></li>
+<li><a href="#byte-pair-encoding-bpe-for-tokenization">Byte-Pair Encoding (BPE) for Tokenization</a></li>
+</ul>
+</li>
+<li><a href="#2-word-normalization-and-lemmatization">2. word normalization and lemmatization</a></li>
+<li><a href="#3-sentence-segmentation">3. sentence segmentation</a></li>
+<li><a href="#4-minimum-edit-distance">4. minimum edit distance</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">  Gridea </a>
+  <a class="rss" href="https://josephine-young.github.io//atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
